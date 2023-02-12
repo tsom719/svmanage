@@ -52,7 +52,7 @@ module.exports = {
 					.setStyle(ButtonStyle.Danger)
 			);
 		await interaction.reply({
-			content: "CodeSJ 재시작",
+			content: "CodeSJ 서비스 중지",
 			components: [row],
 		});
 		return;

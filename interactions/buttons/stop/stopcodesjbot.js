@@ -21,7 +21,7 @@ module.exports = {
 			});
 
 		await interaction.reply({
-			content: "codesjbot 재시작 완료",
+			content: "codesjbot 중지 완료",
 			components: [],
 		});
 		return;

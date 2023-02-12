@@ -21,7 +21,7 @@ module.exports = {
 			});
 
 		await interaction.reply({
-			content: "Apache2 재시작 완료",
+			content: "Apache2 중지 완료",
 			components: [],
 		});
 		return;

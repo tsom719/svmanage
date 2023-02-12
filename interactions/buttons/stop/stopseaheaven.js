@@ -21,7 +21,7 @@ module.exports = {
 			});
 
 		await interaction.reply({
-			content: "SeaheavenWiki 재시작 완료",
+			content: "SeaheavenWiki 중지 완료",
 			components: [],
 		});
 		return;

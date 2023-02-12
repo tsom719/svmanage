@@ -21,7 +21,7 @@ module.exports = {
 			});
 
 		await interaction.reply({
-			content: "mtbot 재시작 완료",
+			content: "mtbot 중지 완료",
 			components: [],
 		});
 		return;
