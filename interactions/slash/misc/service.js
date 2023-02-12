@@ -40,6 +40,12 @@ module.exports = {
 			const row = new ActionRowBuilder()
 				.addComponents(
 					new ButtonBuilder()
+						.setCustomId("statusentry")
+						.setLabel("상태 확인")
+						.setStyle(ButtonStyle.Primary)
+				)
+				.addComponents(
+					new ButtonBuilder()
 						.setCustomId("restartentry")
 						.setLabel("재시작")
 						.setStyle(ButtonStyle.Danger)
