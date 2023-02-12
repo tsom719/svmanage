@@ -20,7 +20,7 @@ const {
 } = require("discord.js");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
-const { token, client_id, test_guild_id } = require("./config.json");
+const { devtoken, dev_client_id, test_guild_id } = require("./config.json");
 
 /**
  * From v13, specifying the intents is compulsory.
@@ -239,7 +239,7 @@ for (const module of selectMenus) {
 /**********************************************************************/
 // Registration of Slash-Commands in Discord API
 
-const rest = new REST({ version: "9" }).setToken(token);
+const rest = new REST({ version: "9" }).setToken(devtoken);
 
 const commandJsonData = [
 	...Array.from(client.slashCommands.values()).map((c) => c.data.toJSON()),
@@ -259,7 +259,7 @@ const commandJsonData = [
 			 */
 
 			//Routes.applicationCommands(client_id), //전체 서버 공개
-			Routes.applicationGuildCommands(client_id, test_guild_id),
+			Routes.applicationGuildCommands(dev_client_id, test_guild_id),
 
 			/**
 			 * Good advice for global commands, you need to execute them only once to update
@@ -302,4 +302,4 @@ for (const folder of triggerFolders) {
 
 // Login into your client application with bot's token.
 
-client.login(token);
+client.login(devtoken);
