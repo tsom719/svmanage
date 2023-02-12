@@ -21,7 +21,7 @@ const {
 	SlashCommandBuilder,
 } = require("discord.js");
 module.exports = {
-	id: "restartentry",
+	id: "stopentry",
 
 	async execute(interaction) {
 		const { NodeSSH } = require("node-ssh");
