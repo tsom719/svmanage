@@ -28,7 +28,7 @@ module.exports = {
 
 	data: new SlashCommandBuilder()
 		.setName("service")
-		.setDescription("서비스 컴트롤 목록."),
+		.setDescription("서비스 컨트롤 목록."),
 
 	async execute(interaction) {
 		//console.log(interaction);
@@ -41,19 +41,19 @@ module.exports = {
 				.addComponents(
 					new ButtonBuilder()
 						.setCustomId("statusentry")
-						.setLabel("상태 확인")
+						.setLabel("서비스 상태 확인")
 						.setStyle(ButtonStyle.Primary)
 				)
 				.addComponents(
 					new ButtonBuilder()
 						.setCustomId("restartentry")
-						.setLabel("재시작")
+						.setLabel("서비스 재시작")
 						.setStyle(ButtonStyle.Danger)
 				)
 				.addComponents(
 					new ButtonBuilder()
 						.setCustomId("stopentry")
-						.setLabel("중지")
+						.setLabel("서비스 중지")
 						.setStyle(ButtonStyle.Danger)
 				);
 			await interaction.reply({
