@@ -1,14 +1,4 @@
-/**
- * @file Sample button interaction
- * @author Naman Vrati
- * @since 3.0.0
- * @version 3.2.2
- */
-
-/**
- * @type {import('../../../typings').ButtonInteractionCommand}
- *
- */
+const { sshpw } = require("../../../config.json");
 const {
 	Client,
 	Collection,
@@ -35,14 +25,14 @@ module.exports = {
 			.connect({
 				host: "dev.codesj.kr",
 				username: "codesj",
-				password: "a071907a",
+				password: sshpw,
 				readyTimeout: 30000,
 			})
 			.then(function () {
 				ssh
-					.execCommand("echo a071907a | sudo -S systemctl status seaheaven", {})
+					.execCommand(`echo ${sshpw} | sudo -S systemctl status seaheaven`, {})
 					.then(function (result) {
-						ssh.execCommand("a071907a", {});
+						ssh.execCommand(sshpw, {});
 						resultfinal = result.stdout;
 					})
 					.then(function () {
