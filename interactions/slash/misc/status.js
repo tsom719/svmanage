@@ -16,7 +16,7 @@ module.exports = {
 	// The data needed to register slash commands to Discord.
 
 	data: new SlashCommandBuilder()
-		.setName("service")
+		.setName("status")
 		.setDescription("서버 상태를 확인함")
 		.addStringOption((option) =>
 			option.setName("service").setDescription("확인할 서비스명 입력")
@@ -28,7 +28,12 @@ module.exports = {
 		const helpEmbed = new EmbedBuilder().setColor("Random");
 		const { NodeSSH } = require("node-ssh");
 		const ssh = new NodeSSH();
-		if (service == "seaheaven" || service == "apache2" || service == "mtbot") {
+		if (
+			service == "seaheaven" ||
+			service == "apache2" ||
+			service == "mtbot" ||
+			service == "codesjbot"
+		) {
 			//service = service.toLowerCase();
 
 			ssh
@@ -46,11 +51,11 @@ module.exports = {
 						)
 						.then(function (result) {
 							ssh.execCommand("a071907a", {});
-							console.log(result.stdout);
 							resultfinal = result.stdout;
 						})
 						.then(function () {
 							if (resultfinal.startsWith("●")) {
+								console.log(`CodeSJ BOT >>> ${service} Status Online ●`);
 								helpEmbed
 									.setTitle("서비스 작동 현황 - 온라인")
 									.setDescription(resultfinal)
@@ -58,7 +63,8 @@ module.exports = {
 								interaction.reply({
 									embeds: [helpEmbed],
 								});
-							} else {
+							} else if (resultfinal.startsWith("○")) {
+								console.log(`CodeSJ BOT >>> ${service} Status Offline ○`);
 								helpEmbed
 									.setTitle("서비스 작동 현황 - 오프라인")
 									.setDescription(resultfinal)
