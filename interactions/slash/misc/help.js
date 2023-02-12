@@ -17,12 +17,7 @@ module.exports = {
 
 	data: new SlashCommandBuilder()
 		.setName("help")
-		.setDescription("CodeSJ 봇 사용법")
-		.addStringOption((option) =>
-			option
-				.setName("command")
-				.setDescription("The specific command to see the info of.")
-		),
+		.setDescription("CodeSJ 봇 사용법"),
 
 	async execute(interaction) {
 		/**
