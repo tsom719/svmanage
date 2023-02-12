@@ -21,18 +21,20 @@ const {
 } = require("discord.js");
 
 /**
- * @type {import('../../../typings').SlashInteractionCommand}
+ * @type {import('../../typings').SlashInteractionCommand}
  */
 module.exports = {
 	// The data needed to register slash commands to Discord.
 
 	data: new SlashCommandBuilder()
-		.setName("service")
-		.setDescription("서비스 컨트롤 목록."),
+		.setName("restart")
+		.setDescription("서비스를 재시작함."),
 
 	async execute(interaction) {
 		//console.log(interaction);
-		console.log();
+		console.log(
+			interaction.member.roles.cache.some((r) => r.id == "1074241811314389022")
+		);
 
 		if (
 			interaction.member.roles.cache.some((r) => r.id == "1074241811314389022")
@@ -40,24 +42,31 @@ module.exports = {
 			const row = new ActionRowBuilder()
 				.addComponents(
 					new ButtonBuilder()
-						.setCustomId("statusentry")
-						.setLabel("서비스 상태 확인")
-						.setStyle(ButtonStyle.Primary)
-				)
-				.addComponents(
-					new ButtonBuilder()
-						.setCustomId("restartentry")
-						.setLabel("서비스 재시작")
+						.setCustomId("restartseaheaven")
+						.setLabel("seaheaven")
 						.setStyle(ButtonStyle.Danger)
 				)
 				.addComponents(
 					new ButtonBuilder()
-						.setCustomId("stopentry")
-						.setLabel("서비스 중지")
+						.setCustomId("restartapache2")
+						.setLabel("apache2")
+						.setStyle(ButtonStyle.Danger)
+				)
+				.addComponents(
+					new ButtonBuilder()
+						.setCustomId("restartmtbot")
+						.setLabel("mtbot")
+						.setStyle(ButtonStyle.Danger)
+				)
+				.addComponents(
+					new ButtonBuilder()
+						.setCustomId("restartcodesjbot")
+						.setLabel("codesjbot")
 						.setStyle(ButtonStyle.Danger)
 				);
 			await interaction.reply({
-				content: "Menu를 선택하세요.",
+				content:
+					"재시작할 서비스를 클릭하세요.\n버튼을 클릭할 시 바로 재시작됩니다.",
 				ephemeral: true,
 				components: [row],
 			});
