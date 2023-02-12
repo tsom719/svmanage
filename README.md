@@ -1,4 +1,4 @@
-<h1 align="center">CodeSJ 서버 관리 디스코드 </h1>
+<h1 align="center">CodeSJ 서버 관리 디스코드 봇</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-v0.1-blue.svg?cacheSeconds=2592000" />
 </p>
