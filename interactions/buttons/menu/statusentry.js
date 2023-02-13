@@ -53,9 +53,11 @@ module.exports = {
 			);
 
 		await interaction.reply({
-			content: "CodeSJ 서버 상태 확인",
+			content: "Codesj 서버 상태 확인",
+			ephemeral: true,
 			components: [row],
 		});
+
 		return;
 	},
 };

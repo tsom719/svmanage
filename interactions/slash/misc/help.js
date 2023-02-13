@@ -17,24 +17,9 @@ module.exports = {
 
 	data: new SlashCommandBuilder()
 		.setName("help")
-		.setDescription("CodeSJ 봇 사용법")
-		.addStringOption((option) =>
-			option
-				.setName("command")
-				.setDescription("The specific command to see the info of.")
-		),
+		.setDescription("CodeSJ 봇 사용법"),
 
 	async execute(interaction) {
-		/**
-		 * @type {string}
-		 * @description The "command" argument
-		 */
-		let name = interaction.options.getString("command");
-
-		/**
-		 * @type {EmbedBuilder}
-		 * @description Help command's embed
-		 */
 		const helpEmbed = new EmbedBuilder().setColor("Random");
 		helpEmbed
 			.setTitle("CodeSJ 서비스 관리 봇 사용법")
