@@ -57,7 +57,7 @@ module.exports = {
 						.setStyle(ButtonStyle.Danger)
 				);
 			await interaction.reply({
-				content: "Menu를 선택하세요.",
+				content: "Menu를 선택하세요.",
 				ephemeral: true,
 				components: [row],
 			});
