@@ -56,11 +56,13 @@ module.exports = {
 		) {
 			await interaction.reply({
 				content: "Codesj 서비스 중지",
+				ephemeral: true,
 				components: [row],
 			});
 		} else {
 			await interaction.reply({
 				content: "권한이 없습니다. 관리자에게 요청하세요",
+				ephemeral: true,
 			});
 		}
 		return;

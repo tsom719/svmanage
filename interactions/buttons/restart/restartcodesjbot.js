@@ -25,6 +25,7 @@ module.exports = {
 
 		await interaction.reply({
 			content: "codesjbot 재시작 완료",
+			ephemeral: true,
 			components: [],
 		});
 		return;

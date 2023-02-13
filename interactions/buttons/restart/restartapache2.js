@@ -22,6 +22,7 @@ module.exports = {
 
 		await interaction.reply({
 			content: "Apache2 재시작 완료",
+			ephemeral: true,
 			components: [],
 		});
 		return;
