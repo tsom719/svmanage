@@ -14,7 +14,6 @@ const { Routes } = require("discord-api-types/v9");
 const { devtoken, dev_client_id, test_guild_id } = require("./config.json");
 
 const client = new Client({
-	// Please add all intents you need, more detailed information @ https://ziad87.net/intents/
 	intents: [
 		GatewayIntentBits.Guilds,
 		GatewayIntentBits.DirectMessages,
