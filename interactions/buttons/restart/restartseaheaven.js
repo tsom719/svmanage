@@ -25,7 +25,6 @@ module.exports = {
 
 		await interaction.reply({
 			content: "SeaheavenWiki 재시작 완료",
-			ephemeral: true,
 			components: [],
 		});
 		return;
