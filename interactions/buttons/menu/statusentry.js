@@ -52,10 +52,18 @@ module.exports = {
 					.setStyle(ButtonStyle.Primary)
 			);
 
-		await interaction.reply({
-			content: "CodeSJ 서버 상태 확인",
-			components: [row],
-		});
+		if (
+			interaction.member.roles.cache.some((r) => r.id == "1074241811314389022")
+		) {
+			await interaction.reply({
+				content: "Codesj 서버 상태 확인",
+				components: [row],
+			});
+		} else {
+			await interaction.reply({
+				content: "권한이 없습니다. 관리자에게 요청하세요",
+			});
+		}
 		return;
 	},
 };
