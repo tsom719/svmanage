@@ -15,7 +15,7 @@ module.exports = {
 
 	async execute(message) {
 		return message.channel.send(
-			`Hi ${message.author}! My prefix is \`${prefix}\`, get help by \`${prefix}help\``
+			`CodeSJ 봇이 작동중입니다. 슬래시 커맨드로 명령어를 이용하세요.`
 		);
 	},
 };
