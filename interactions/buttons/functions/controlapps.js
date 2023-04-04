@@ -1,17 +1,6 @@
 const { sshpw } = require("../../../config.json");
 
-const {
-	Client,
-	Collection,
-	GatewayIntentBits,
-	Partials,
-	ActionRowBuilder,
-	ButtonBuilder,
-	ButtonStyle,
-	Events,
-	EmbedBuilder,
-	SlashCommandBuilder,
-} = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 module.exports = {
 	id: "controlapps",
 
