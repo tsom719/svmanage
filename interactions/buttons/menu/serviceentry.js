@@ -58,6 +58,12 @@ module.exports = {
 						.setCustomId(`${funcit}itcodesjbot`)
 						.setLabel("codesjbot")
 						.setStyle(ButtonStyle.Primary)
+				)	
+				.addComponents(
+					new ButtonBuilder()
+						.setCustomId(`${funcit}itshmc`)
+						.setLabel("shmc")
+						.setStyle(ButtonStyle.Primary)
 				);
 
 			await interaction.reply({
