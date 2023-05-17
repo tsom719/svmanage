@@ -52,7 +52,7 @@ module.exports = {
 								});
 							} else if (funcname == "status") {
 								if (resultfinal.startsWith("●")) {
-									console.log(`CodeSJ BOT >>> codesjbot Status Online ●`);
+									console.log(`CodeSJ BOT >>> ${servname} Status Online ●`);
 									rtembed
 										.setTitle("서비스 작동 현황 - 온라인")
 										.setDescription(resultfinal)
@@ -61,7 +61,7 @@ module.exports = {
 										embeds: [rtembed],
 									});
 								} else if (resultfinal.startsWith("○")) {
-									console.log(`CodeSJ BOT >>> codesjbot Status Offline ○`);
+									console.log(`CodeSJ BOT >>> ${servname} Status Offline ○`);
 									rtembed
 										.setTitle("서비스 작동 현황 - 오프라인")
 										.setDescription(resultfinal)
